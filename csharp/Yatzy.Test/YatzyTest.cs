@@ -6,13 +6,12 @@ namespace Yatzy.Test
     {
         private Yatzy _yatzy = new Yatzy();
 
-        [Fact]
-        public void Chance_scores_sum_of_all_dice()
+        [Theory]
+        [InlineData(2,3,4,5,1,15)]
+        [InlineData(3,3,4,5,1,16)]
+        public void Chance_scores_sum_of_all_dice(int d1, int d2, int d3, int d4, int d5, int expected)
         {
-            var expected = 15;
-            var actual = _yatzy.Chance(2, 3, 4, 5, 1);
-            Assert.Equal(expected, actual);
-            Assert.Equal(16, _yatzy.Chance(3, 3, 4, 5, 1));
+            Assert.Equal(expected, _yatzy.Chance(d1, d2, d3, d4, d5));
         }
 
         [Fact]
