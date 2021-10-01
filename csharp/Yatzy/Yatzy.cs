@@ -4,7 +4,7 @@ namespace Yatzy
 {
     public class Yatzy
     {
-        public static int Chance(int d1, int d2, int d3, int d4, int d5)
+        public int Chance(int d1, int d2, int d3, int d4, int d5)
         {
             var total = 0;
             total += d1;
@@ -15,7 +15,7 @@ namespace Yatzy
             return total;
         }
 
-        public static int yatzy(params int[] dice)
+        public int yatzy(params int[] dice)
         {
             var counts = new int[6];
             foreach (var die in dice)
@@ -26,7 +26,7 @@ namespace Yatzy
             return 0;
         }
 
-        public static int Ones(int d1, int d2, int d3, int d4, int d5)
+        public int Ones(int d1, int d2, int d3, int d4, int d5)
         {
             var sum = 0;
             if (d1 == 1) sum++;
@@ -39,7 +39,7 @@ namespace Yatzy
             return sum;
         }
 
-        public static int Twos(int d1, int d2, int d3, int d4, int d5)
+        public int Twos(int d1, int d2, int d3, int d4, int d5)
         {
             var sum = 0;
             if (d1 == 2) sum += 2;
@@ -50,7 +50,7 @@ namespace Yatzy
             return sum;
         }
 
-        public static int Threes(int d1, int d2, int d3, int d4, int d5)
+        public int Threes(int d1, int d2, int d3, int d4, int d5)
         {
             int s;
             s = 0;
@@ -83,7 +83,7 @@ namespace Yatzy
             return dices.Where(x => x == 6).Sum();
         }
 
-        public static int ScorePair(int d1, int d2, int d3, int d4, int d5)
+        public int ScorePair(int d1, int d2, int d3, int d4, int d5)
         {
             var counts = new int[6];
             counts[d1 - 1]++;
@@ -98,7 +98,7 @@ namespace Yatzy
             return 0;
         }
 
-        public static int TwoPair(int d1, int d2, int d3, int d4, int d5)
+        public int TwoPair(int d1, int d2, int d3, int d4, int d5)
         {
             var counts = new int[6];
             counts[d1 - 1]++;
@@ -120,7 +120,7 @@ namespace Yatzy
             return 0;
         }
 
-        public static int FourOfAKind(int _1, int _2, int d3, int d4, int d5)
+        public int FourOfAKind(int _1, int _2, int d3, int d4, int d5)
         {
             int[] tallies;
             tallies = new int[6];
@@ -135,7 +135,7 @@ namespace Yatzy
             return 0;
         }
 
-        public static int ThreeOfAKind(int d1, int d2, int d3, int d4, int d5)
+        public int ThreeOfAKind(int d1, int d2, int d3, int d4, int d5)
         {
             int[] t;
             t = new int[6];
@@ -150,7 +150,7 @@ namespace Yatzy
             return 0;
         }
 
-        public static int SmallStraight(int d1, int d2, int d3, int d4, int d5)
+        public int SmallStraight(int d1, int d2, int d3, int d4, int d5)
         {
             int[] tallies;
             tallies = new int[6];
@@ -168,7 +168,7 @@ namespace Yatzy
             return 0;
         }
 
-        public static int LargeStraight(int d1, int d2, int d3, int d4, int d5)
+        public int LargeStraight(int d1, int d2, int d3, int d4, int d5)
         {
             int[] tallies;
             tallies = new int[6];
@@ -186,7 +186,7 @@ namespace Yatzy
             return 0;
         }
 
-        public static int FullHouse(int d1, int d2, int d3, int d4, int d5)
+        public int FullHouse(int d1, int d2, int d3, int d4, int d5)
         {
             int[] tallies;
             var _2 = false;
