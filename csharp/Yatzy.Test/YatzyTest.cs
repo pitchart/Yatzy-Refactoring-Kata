@@ -39,9 +39,9 @@ namespace Yatzy.Test
         [Fact]
         public void fives()
         {
-            Assert.Equal(10, new Yatzy(4, 4, 4, 5, 5).Fives());
-            Assert.Equal(15, new Yatzy(4, 4, 5, 5, 5).Fives());
-            Assert.Equal(20, new Yatzy(4, 5, 5, 5, 5).Fives());
+            Assert.Equal(10, new Yatzy().Fives(4, 4, 4, 5, 5));
+            Assert.Equal(15, new Yatzy().Fives(4, 4, 5, 5, 5));
+            Assert.Equal(20, new Yatzy().Fives(4, 5, 5, 5, 5));
         }
 
         [Fact]

@@ -84,14 +84,11 @@ namespace Yatzy
             return dices.Where(x => x == 4).Sum();
         }
 
-        public int Fives()
+        public int Fives(int d1, int d2, int d3, int d4, int d5)
         {
-            var s = 0;
-            int i;
-            for (i = 0; i < dice.Length; i++)
-                if (dice[i] == 5)
-                    s = s + 5;
-            return s;
+            var dices = new[] { d1, d2, d3, d4, d5 };
+            
+            return dices.Where(x => x == 5).Sum();
         }
 
         public int sixes()
