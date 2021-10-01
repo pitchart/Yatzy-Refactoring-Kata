@@ -14,13 +14,14 @@ namespace Yatzy.Test
             Assert.Equal(expected, _yatzy.Chance(d1, d2, d3, d4, d5));
         }
 
-        [Fact]
-        public void Fact_1s()
+        [Theory]
+        [InlineData(1,2,3,4,5,1)]
+        [InlineData(1, 2, 1, 4, 5,2)]
+        [InlineData(6, 2, 2, 4, 5, 0)]
+        [InlineData(1, 2, 1, 1, 1, 4)]
+        public void Ones_scores_sum_of_all_ones(int d1, int d2, int d3, int d4, int d5, int expected)
         {
-            Assert.True(_yatzy.Ones(1, 2, 3, 4, 5) == 1);
-            Assert.Equal(2, _yatzy.Ones(1, 2, 1, 4, 5));
-            Assert.Equal(0, _yatzy.Ones(6, 2, 2, 4, 5));
-            Assert.Equal(4, _yatzy.Ones(1, 2, 1, 1, 1));
+            Assert.Equal(expected, _yatzy.Ones(d1, d2, d3, d4, d5));
         }
 
         [Fact]
