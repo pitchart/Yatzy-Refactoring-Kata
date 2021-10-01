@@ -57,7 +57,7 @@ namespace Yatzy.Test
         {
             Assert.Equal(expected, _yatzy.Fives(d1, d2, d3, d4, d5));
         }
-        
+
         [Theory]
         [InlineData(4, 4, 4, 5, 5,0)]
         [InlineData(4, 4, 6, 5, 5,6)]
@@ -90,12 +90,13 @@ namespace Yatzy.Test
             Assert.Equal(0, _yatzy.LargeStraight(1, 2, 2, 4, 5));
         }
 
-        [Fact]
-        public void one_pair()
+        [Theory]
+        [InlineData(3, 4, 3, 5, 6, 6)]
+        [InlineData(5, 3, 3, 3, 5, 10)]
+        [InlineData(5, 3, 6, 6, 5, 12)]
+        public void One_pair_scores_sum_of_highest_pair_values(int d1, int d2, int d3, int d4, int d5, int expected)
         {
-            Assert.Equal(6, _yatzy.ScorePair(3, 4, 3, 5, 6));
-            Assert.Equal(10, _yatzy.ScorePair(5, 3, 3, 3, 5));
-            Assert.Equal(12, _yatzy.ScorePair(5, 3, 6, 6, 5));
+            Assert.Equal(expected, _yatzy.ScorePair(d1, d2, d3, d4, d5));
         }
 
         [Fact]
