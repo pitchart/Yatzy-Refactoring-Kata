@@ -4,21 +4,6 @@ namespace Yatzy
 {
     public class Yatzy
     {
-        protected int[] dice;
-
-        public Yatzy()
-        {
-        }
-        public Yatzy(int d1, int d2, int d3, int d4, int _5)
-        {
-            dice = new int[5];
-            dice[0] = d1;
-            dice[1] = d2;
-            dice[2] = d3;
-            dice[3] = d4;
-            dice[4] = _5;
-        }
-
         public static int Chance(int d1, int d2, int d3, int d4, int d5)
         {
             var total = 0;
@@ -87,14 +72,14 @@ namespace Yatzy
         public int Fives(int d1, int d2, int d3, int d4, int d5)
         {
             var dices = new[] { d1, d2, d3, d4, d5 };
-            
+
             return dices.Where(x => x == 5).Sum();
         }
 
         public int Sixes(int d1, int d2, int d3, int d4, int d5)
         {
             var dices = new[] { d1, d2, d3, d4, d5 };
-            
+
             return dices.Where(x => x == 6).Sum();
         }
 
