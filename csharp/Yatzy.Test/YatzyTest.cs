@@ -86,9 +86,9 @@ namespace Yatzy.Test
         [Fact]
         public void sixes_Fact()
         {
-            Assert.Equal(0, new Yatzy().sixes(4, 4, 4, 5, 5));
-            Assert.Equal(6, new Yatzy().sixes(4, 4, 6, 5, 5));
-            Assert.Equal(18, new Yatzy().sixes(6, 5, 6, 6, 5));
+            Assert.Equal(0, new Yatzy().Sixes(4, 4, 4, 5, 5));
+            Assert.Equal(6, new Yatzy().Sixes(4, 4, 6, 5, 5));
+            Assert.Equal(18, new Yatzy().Sixes(6, 5, 6, 6, 5));
         }
 
         [Fact]
