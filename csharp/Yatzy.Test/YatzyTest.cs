@@ -94,6 +94,7 @@ namespace Yatzy.Test
         [InlineData(3, 4, 3, 5, 6, 6)]
         [InlineData(5, 3, 3, 3, 5, 10)]
         [InlineData(5, 3, 6, 6, 5, 12)]
+        [InlineData(2, 3, 1, 6, 5, 0)]
         public void One_pair_scores_sum_of_highest_pair_values(int d1, int d2, int d3, int d4, int d5, int expected)
         {
             Assert.Equal(expected, _yatzy.ScorePair(d1, d2, d3, d4, d5));
