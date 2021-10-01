@@ -28,59 +28,49 @@ namespace Yatzy
 
         public int Ones(int d1, int d2, int d3, int d4, int d5)
         {
-            var sum = 0;
-            if (d1 == 1) sum++;
-            if (d2 == 1) sum++;
-            if (d3 == 1) sum++;
-            if (d4 == 1) sum++;
-            if (d5 == 1)
-                sum++;
+            var dices = new[] { d1, d2, d3, d4, d5 };
 
-            return sum;
+            return SumOf(dices, 1);
         }
 
         public int Twos(int d1, int d2, int d3, int d4, int d5)
         {
-            var sum = 0;
-            if (d1 == 2) sum += 2;
-            if (d2 == 2) sum += 2;
-            if (d3 == 2) sum += 2;
-            if (d4 == 2) sum += 2;
-            if (d5 == 2) sum += 2;
-            return sum;
+            var dices = new[] { d1, d2, d3, d4, d5 };
+
+            return SumOf(dices, 2);
         }
 
         public int Threes(int d1, int d2, int d3, int d4, int d5)
         {
-            int s;
-            s = 0;
-            if (d1 == 3) s += 3;
-            if (d2 == 3) s += 3;
-            if (d3 == 3) s += 3;
-            if (d4 == 3) s += 3;
-            if (d5 == 3) s += 3;
-            return s;
+            var dices = new[] { d1, d2, d3, d4, d5 };
+
+            return SumOf(dices, 3);
         }
 
         public int Fours(int d1, int d2, int d3, int d4, int d5)
         {
             var dices = new[] { d1, d2, d3, d4, d5 };
 
-            return dices.Where(x => x == 4).Sum();
+            return SumOf(dices, 4);
+        }
+
+        private static int SumOf(int[] dices, int value)
+        {
+            return dices.Where(x => x == value).Sum();
         }
 
         public int Fives(int d1, int d2, int d3, int d4, int d5)
         {
             var dices = new[] { d1, d2, d3, d4, d5 };
 
-            return dices.Where(x => x == 5).Sum();
+            return SumOf(dices, 5);
         }
 
         public int Sixes(int d1, int d2, int d3, int d4, int d5)
         {
             var dices = new[] { d1, d2, d3, d4, d5 };
 
-            return dices.Where(x => x == 6).Sum();
+            return SumOf(dices, 6);
         }
 
         public int ScorePair(int d1, int d2, int d3, int d4, int d5)
