@@ -103,6 +103,8 @@ namespace Yatzy.Test
         [Theory]
         [InlineData(3, 3, 5, 4, 5, 16)]
         [InlineData(3, 3, 5, 5, 5, 16)]
+        [InlineData(3, 3, 4, 5, 4, 14)]
+        [InlineData(3, 4, 5, 6, 1, 0)]
         public void two_Pair(int d1, int d2, int d3, int d4, int d5, int expected)
         {
             Assert.Equal(expected, _yatzy.TwoPair(d1, d2, d3, d4, d5));

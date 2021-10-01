@@ -72,30 +72,21 @@ namespace Yatzy
                     .OrderByDescending(d => d)
                     .GroupBy(d => d)
                     .FirstOrDefault(x => x.Count() > 1);
-            
+
             return pair?.Sum() ?? 0;
         }
 
         public int TwoPair(int d1, int d2, int d3, int d4, int d5)
         {
-            var counts = new int[6];
-            counts[d1 - 1]++;
-            counts[d2 - 1]++;
-            counts[d3 - 1]++;
-            counts[d4 - 1]++;
-            counts[d5 - 1]++;
-            var n = 0;
-            var score = 0;
-            for (var i = 0; i < 6; i += 1)
-                if (counts[6 - i - 1] >= 2)
-                {
-                    n++;
-                    score += 6 - i;
-                }
+            var dices = new[] { d1, d2, d3, d4, d5 };
 
-            if (n == 2)
-                return score * 2;
-            return 0;
+            var pair =
+                dices
+                    .GroupBy(d => d)
+                    .Where(x => x.Count() > 1)
+                    .Sum(d => d.Key * 2);
+
+            return pair;
         }
 
         public int FourOfAKind(int _1, int _2, int d3, int d4, int d5)
