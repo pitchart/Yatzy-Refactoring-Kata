@@ -91,13 +91,11 @@ namespace Yatzy
             return dices.Where(x => x == 5).Sum();
         }
 
-        public int sixes()
+        public int sixes(int d1, int d2, int d3, int d4, int d5)
         {
-            var sum = 0;
-            for (var at = 0; at < dice.Length; at++)
-                if (dice[at] == 6)
-                    sum = sum + 6;
-            return sum;
+            var dices = new[] { d1, d2, d3, d4, d5 };
+            
+            return dices.Where(x => x == 6).Sum();
         }
 
         public static int ScorePair(int d1, int d2, int d3, int d4, int d5)
