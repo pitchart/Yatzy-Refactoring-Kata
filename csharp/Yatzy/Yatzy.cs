@@ -67,11 +67,12 @@ namespace Yatzy
         public int ScorePair(int d1, int d2, int d3, int d4, int d5)
         {
             var dices = new[] { d1, d2, d3, d4, d5 };
-            return dices
-                .OrderByDescending(d => d)
-                .GroupBy(d => d)
-                .First(x => Enumerable.Count<int>(x) > 1)
-                .Sum()
+            var pair =
+            dices
+                    .OrderByDescending(d => d)
+                    .GroupBy(d => d)
+                    .FirstOrDefault(x => Enumerable.Count<int>(x) > 1);
+            return pair?.Sum() ?? 0;
             ;
         }
 
