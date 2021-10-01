@@ -24,11 +24,12 @@ namespace Yatzy.Test
             Assert.Equal(expected, _yatzy.Ones(d1, d2, d3, d4, d5));
         }
 
-        [Fact]
-        public void Fact_2s()
+        [Theory]
+        [InlineData(1, 2, 3, 2, 6,4)]
+        [InlineData(2, 2, 2, 2, 2,10)]
+        public void Twos_scores_sum_of_all_twos(int d1, int d2, int d3, int d4, int d5, int expected)
         {
-            Assert.Equal(4, _yatzy.Twos(1, 2, 3, 2, 6));
-            Assert.Equal(10, _yatzy.Twos(2, 2, 2, 2, 2));
+            Assert.Equal(expected, _yatzy.Twos(d1, d2, d3, d4, d5));
         }
 
         [Fact]
