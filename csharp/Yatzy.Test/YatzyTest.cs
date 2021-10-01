@@ -55,9 +55,9 @@ namespace Yatzy.Test
         [Fact]
         public void fours_Fact()
         {
-            Assert.Equal(12, new Yatzy(4, 4, 4, 5, 5).Fours());
-            Assert.Equal(8, new Yatzy(4, 4, 5, 5, 5).Fours());
-            Assert.Equal(4, new Yatzy(4, 5, 5, 5, 5).Fours());
+            Assert.Equal(12, new Yatzy().Fours(4, 4, 4, 5, 5));
+            Assert.Equal(8, new Yatzy().Fours(4, 4, 5, 5, 5));
+            Assert.Equal(4, new Yatzy().Fours(4, 5, 5, 5, 5));
         }
 
         [Fact]
