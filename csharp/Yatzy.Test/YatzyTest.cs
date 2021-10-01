@@ -40,12 +40,31 @@ namespace Yatzy.Test
             Assert.Equal(expected, _yatzy.Threes(d1, d2, d3, d4, d5));
         }
 
-        [Fact]
-        public void fives()
+        [Theory]
+        [InlineData(4, 4, 4, 5, 5,12)]
+        [InlineData(4, 4, 5, 5, 5,8)]
+        [InlineData(4, 5, 5, 5, 5,4)]
+        public void Fours_scores_sum_of_all_fours(int d1, int d2, int d3, int d4, int d5, int expected)
         {
-            Assert.Equal(10, new Yatzy().Fives(4, 4, 4, 5, 5));
-            Assert.Equal(15, new Yatzy().Fives(4, 4, 5, 5, 5));
-            Assert.Equal(20, new Yatzy().Fives(4, 5, 5, 5, 5));
+            Assert.Equal(expected, _yatzy.Fours(d1, d2, d3, d4, d5));
+        }
+
+        [Theory]
+        [InlineData(4, 4, 4, 5, 5,10)]
+        [InlineData(4, 4, 5, 5, 5,15)]
+        [InlineData(4, 5, 5, 5, 5,20)]
+        public void Fives_scores_sum_of_all_fives(int d1, int d2, int d3, int d4, int d5, int expected)
+        {
+            Assert.Equal(expected, _yatzy.Fives(d1, d2, d3, d4, d5));
+        }
+        
+        [Theory]
+        [InlineData(4, 4, 4, 5, 5,0)]
+        [InlineData(4, 4, 6, 5, 5,6)]
+        [InlineData(6, 5, 6, 6, 5,18)]
+        public void Sixes_scores_sum_of_all_sixes(int d1, int d2, int d3, int d4, int d5, int expected)
+        {
+            Assert.Equal(expected, _yatzy.Sixes(d1, d2, d3, d4, d5));
         }
 
         [Fact]
@@ -54,14 +73,6 @@ namespace Yatzy.Test
             Assert.Equal(12, _yatzy.FourOfAKind(3, 3, 3, 3, 5));
             Assert.Equal(20, _yatzy.FourOfAKind(5, 5, 5, 4, 5));
             Assert.Equal(12, _yatzy.FourOfAKind(3, 3, 3, 3, 3));
-        }
-
-        [Fact]
-        public void fours_Fact()
-        {
-            Assert.Equal(12, new Yatzy().Fours(4, 4, 4, 5, 5));
-            Assert.Equal(8, new Yatzy().Fours(4, 4, 5, 5, 5));
-            Assert.Equal(4, new Yatzy().Fours(4, 5, 5, 5, 5));
         }
 
         [Fact]
@@ -85,14 +96,6 @@ namespace Yatzy.Test
             Assert.Equal(6, _yatzy.ScorePair(3, 4, 3, 5, 6));
             Assert.Equal(10, _yatzy.ScorePair(5, 3, 3, 3, 5));
             Assert.Equal(12, _yatzy.ScorePair(5, 3, 6, 6, 5));
-        }
-
-        [Fact]
-        public void sixes_Fact()
-        {
-            Assert.Equal(0, new Yatzy().Sixes(4, 4, 4, 5, 5));
-            Assert.Equal(6, new Yatzy().Sixes(4, 4, 6, 5, 5));
-            Assert.Equal(18, new Yatzy().Sixes(6, 5, 6, 6, 5));
         }
 
         [Fact]
