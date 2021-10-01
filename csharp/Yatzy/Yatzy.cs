@@ -6,13 +6,9 @@ namespace Yatzy
     {
         public int Chance(int d1, int d2, int d3, int d4, int d5)
         {
-            var total = 0;
-            total += d1;
-            total += d2;
-            total += d3;
-            total += d4;
-            total += d5;
-            return total;
+            var dices = new int[] {d1, d2, d3, d4, d5};
+
+            return dices.Sum();
         }
 
         public int yatzy(params int[] dice)
@@ -52,11 +48,6 @@ namespace Yatzy
             var dices = new[] { d1, d2, d3, d4, d5 };
 
             return SumOf(dices, 4);
-        }
-
-        private static int SumOf(int[] dices, int value)
-        {
-            return dices.Where(x => x == value).Sum();
         }
 
         public int Fives(int d1, int d2, int d3, int d4, int d5)
@@ -210,6 +201,11 @@ namespace Yatzy
             if (_2 && _3)
                 return _2_at * 2 + _3_at * 3;
             return 0;
+        }
+
+        private int SumOf(int[] dices, int value)
+        {
+            return dices.Where(x => x == value).Sum();
         }
     }
 }
