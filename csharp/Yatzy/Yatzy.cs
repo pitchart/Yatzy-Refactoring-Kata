@@ -72,6 +72,7 @@ namespace Yatzy
                     .OrderByDescending(d => d)
                     .GroupBy(d => d)
                     .FirstOrDefault(x => x.Count() > 1);
+            
             return pair?.Sum() ?? 0;
         }
 

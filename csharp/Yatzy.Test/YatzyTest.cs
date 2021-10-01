@@ -100,6 +100,14 @@ namespace Yatzy.Test
             Assert.Equal(expected, _yatzy.ScorePair(d1, d2, d3, d4, d5));
         }
 
+        [Theory]
+        [InlineData(3, 3, 5, 4, 5, 16)]
+        [InlineData(3, 3, 5, 5, 5, 16)]
+        public void two_Pair(int d1, int d2, int d3, int d4, int d5, int expected)
+        {
+            Assert.Equal(expected, _yatzy.TwoPair(d1, d2, d3, d4, d5));
+        }
+
         [Fact]
         public void smallStraight()
         {
@@ -114,13 +122,6 @@ namespace Yatzy.Test
             Assert.Equal(9, _yatzy.ThreeOfAKind(3, 3, 3, 4, 5));
             Assert.Equal(15, _yatzy.ThreeOfAKind(5, 3, 5, 4, 5));
             Assert.Equal(9, _yatzy.ThreeOfAKind(3, 3, 3, 3, 5));
-        }
-
-        [Fact]
-        public void two_Pair()
-        {
-            Assert.Equal(16, _yatzy.TwoPair(3, 3, 5, 4, 5));
-            Assert.Equal(16, _yatzy.TwoPair(3, 3, 5, 5, 5));
         }
 
         [Fact]
